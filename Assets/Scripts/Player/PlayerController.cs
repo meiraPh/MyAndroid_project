@@ -27,6 +27,10 @@ public class PlayerController : Singleton<PlayerController>
 
     public bool invencible = true;
 
+    [Header("Text")]
+    public GameObject coinCollector;
+
+
     //Private
     private bool _canRun;
     private Vector3 _pos;
@@ -115,5 +119,10 @@ public class PlayerController : Singleton<PlayerController>
         transform.DOMoveY(_startPos.y, .1f);
     }
 
+    public void ChangeCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
+    }
+    
     #endregion
 }

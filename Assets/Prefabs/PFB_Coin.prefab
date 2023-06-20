@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04c74896855e6c49a2e2197648edcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compareTag: Player
+  compareTag: CoinCollector
   myparticleSystem: {fileID: 0}
   timeToHide: 0.3
   graphicItem: {fileID: 3769113681163093742}
