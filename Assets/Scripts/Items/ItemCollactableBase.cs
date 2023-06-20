@@ -44,11 +44,16 @@ public class ItemCollactableBase : MonoBehaviour
         }
     }
 
-    protected virtual void Collect()
+    protected virtual void HideItens()
     {
         if(graphicItem != null) graphicItem.SetActive(false);
         SetCollidersEnabled(false);
-        //Invoke("HideObject", timeToHide);
+        //Invoke("HideObject", timeToHide);        
+    }
+
+    protected virtual void Collect()
+    {   
+        HideItens();
         OnCollect();
     }
 

@@ -4068,6 +4068,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 997904949}
     m_Modifications:
+    - target: {fileID: 6513667124341091452, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
+      propertyPath: compareTag
+      value: CoinCollector
+      objectReference: {fileID: 0}
     - target: {fileID: 6763603502958889446, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
       propertyPath: m_Name
       value: PFB_PowerUpCoinCollector
@@ -4116,8 +4120,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6412222733461565134, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
 --- !u!4 &1038846971402418790 stripped
 Transform:
@@ -4188,35 +4191,6 @@ PrefabInstance:
 --- !u!4 &6513667124341091448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6763603502958889447, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
-  m_PrefabInstance: {fileID: 556216750774838687}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6513667124341091449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6763603502958889446, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
-  m_PrefabInstance: {fileID: 556216750774838687}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6513667124341091452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513667124341091449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34c973e0d5ecc74ab2942d7f61cf431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compareTag: Player
-  myparticleSystem: {fileID: 0}
-  timeToHide: 3
-  graphicItem: {fileID: 6513667124446812983}
-  audioSource: {fileID: 0}
-  duration: 3
-  sizeAmount: 10
---- !u!1 &6513667124446812983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6763603503870164648, guid: e71bf65b78d2c1645bcacc8b3e79b74b, type: 3}
   m_PrefabInstance: {fileID: 556216750774838687}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7152943032655744361
