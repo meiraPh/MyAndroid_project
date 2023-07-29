@@ -8,21 +8,15 @@ public class LevelManager : MonoBehaviour
 
     public List<GameObject> levels;
 
-    [Header("Pieces")]
-    public List<LevelPieceBase> levelPiecesStart;
-    public List<LevelPieceBase> levelPieces;
-    public List<LevelPieceBase> levelPiecesEnd;
-    public int piecesStartNumber = 3;
-    public int piecesNumber = 5;
-    public int piecesEndNumber = 1;
+    public List<LevelPieceBasedSetup> levelPieceBasedSetups;
 
     public float timeBetweenPieces = .3f;
     
     [SerializeField] private int _index;
     private GameObject _currentLevel;
 
-
-    public List<LevelPieceBase> _spawnedPieces;
+    [SerializeField] private List<LevelPieceBase> _spawnedPieces = new List<LevelPieceBase>();
+    private LevelPieceBasedSetup _currSetup;
 
     private void Awake()
     {
@@ -54,7 +48,37 @@ public class LevelManager : MonoBehaviour
     #region
     private void CreateLevelPieces()
     {
-        StartCoroutine(CreateLevelPiecesCoroutine());
+        CleanSpawnedPieces();
+        //StartCoroutine(CreateLevelPiecesCoroutine());
+        if (_currSetup != null)
+        {
+            _index++;
+
+            if (_index >= levelPieceBasedSetups.Count)
+            {
+                ResetLevelIndex();
+            }
+        }
+
+        _currSetup = levelPieceBasedSetups[_index];
+
+        for (int i = 0; i < _currSetup.piecesStartNumber; i++)
+        {
+            CreateLevelPiece(_currSetup.levelPiecesStart);
+        }
+
+        for (int i = 0; i < _currSetup.piecesNumber; i++)
+        {
+            CreateLevelPiece(_currSetup.levelPieces);
+        }
+        
+        for (int i = 0; i < _currSetup.piecesEndNumber; i++)
+        {
+            CreateLevelPiece(_currSetup.levelPiecesEnd);
+        }
+
+        ColorManager.Instance. ChangeColorbyType(_currSetup.artType);
+
     }
 
     private void CreateLevelPiece(List<LevelPieceBase> list)
@@ -67,31 +91,59 @@ public class LevelManager : MonoBehaviour
             var lastPiece = _spawnedPieces[_spawnedPieces.Count-1];
             spawnedPiece.transform.position = lastPiece.endPiece.position;
         }
+        else
+        {
+            spawnedPiece.transform.localPosition = Vector3.zero;
+        }
 
-        _spawnedPieces.Add( spawnedPiece);
+        foreach (var p in spawnedPiece.GetComponentsInChildren<ArtPiece>())
+        {
+            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSetup.artType).gameObject);
+        }
+
+        _spawnedPieces.Add(spawnedPiece);
     }
+
+    private void CleanSpawnedPieces()
+    {
+        for (int i = _spawnedPieces.Count -1; i >= 0 ; i--)
+        {
+            Destroy(_spawnedPieces[i].gameObject);
+        }
+
+        _spawnedPieces.Clear();
+    }
+
 
     IEnumerator CreateLevelPiecesCoroutine()
     {
-        _spawnedPieces = new List<LevelPieceBase>();
-
-         
-
-        for (int i = 0; i < piecesStartNumber; i++)
+        if (_currSetup != null)
         {
-            CreateLevelPiece(levelPiecesStart);
+            _index++;
+
+            if (_index >= levelPieceBasedSetups.Count)
+            {
+                ResetLevelIndex();
+            }
+        }
+
+        _currSetup = levelPieceBasedSetups[_index];
+
+        for (int i = 0; i < _currSetup.piecesStartNumber; i++)
+        {
+            CreateLevelPiece(_currSetup.levelPiecesStart);
             yield return new WaitForSeconds(timeBetweenPieces);
         }
 
-        for (int i = 0; i < piecesNumber; i++)
+        for (int i = 0; i < _currSetup.piecesNumber; i++)
         {
-            CreateLevelPiece(levelPieces);
+            CreateLevelPiece(_currSetup.levelPieces);
             yield return new WaitForSeconds(timeBetweenPieces);
         }
         
-        for (int i = 0; i < piecesEndNumber; i++)
+        for (int i = 0; i < _currSetup.piecesEndNumber; i++)
         {
-            CreateLevelPiece(levelPiecesEnd);
+            CreateLevelPiece(_currSetup.levelPiecesEnd);
             yield return new WaitForSeconds(timeBetweenPieces);
         }
 
@@ -103,7 +155,7 @@ public class LevelManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.D))
         {
-            SpawnNextlevel();
+            CreateLevelPieces();
         }
     }
 }
