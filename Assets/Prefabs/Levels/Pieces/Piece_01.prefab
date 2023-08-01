@@ -1,72 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &913718040961276292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3101092850441539609}
-  - component: {fileID: 1957952006417182945}
-  - component: {fileID: 321535369068697785}
-  m_Layer: 0
-  m_Name: PFB_Coin (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3101092850441539609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913718040961276292}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8999996, y: -3.8872867, z: 5.251193}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4818675045162974526}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1957952006417182945
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913718040961276292}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &321535369068697785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913718040961276292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a500365771b37b84680e33649fdcabb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compareTag: CoinCollector
-  myparticleSystem: {fileID: 0}
-  timeToHide: 0.3
-  graphicItem: {fileID: 913718040961276292}
-  audioSource: {fileID: 0}
-  collider: {fileID: 1957952006417182945}
-  collect: 0
-  lerp: 25
-  minDistance: 1
 --- !u!1 &1071537447749871859
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 6671249129744227521}
   m_Father: {fileID: 4818675045162974526}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &867116581900518381
 SphereCollider:
@@ -233,73 +166,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &3016852467805562348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3416343557107463460}
-  - component: {fileID: 74540120030995664}
-  - component: {fileID: 8802565645555320869}
-  m_Layer: 0
-  m_Name: PFB_Coin (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3416343557107463460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016852467805562348}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3800001, y: -3.8872867, z: 5.251193}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4818675045162974526}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &74540120030995664
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016852467805562348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8802565645555320869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016852467805562348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a500365771b37b84680e33649fdcabb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compareTag: CoinCollector
-  myparticleSystem: {fileID: 0}
-  timeToHide: 0.3
-  graphicItem: {fileID: 3016852467805562348}
-  audioSource: {fileID: 0}
-  collider: {fileID: 74540120030995664}
-  collect: 0
-  lerp: 25
-  minDistance: 1
 --- !u!1 &3605260374952578493
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,10 +593,8 @@ Transform:
   - {fileID: 8724227419524837132}
   - {fileID: 2341351628187440634}
   - {fileID: 4138475253556273752}
-  - {fileID: 3101092850441539609}
   - {fileID: 6470588781130558973}
   - {fileID: 7164677171606751327}
-  - {fileID: 3416343557107463460}
   - {fileID: 4771008416338638099}
   m_Father: {fileID: 4416589965839142577}
   m_RootOrder: 2
@@ -982,7 +846,7 @@ Transform:
   m_Children:
   - {fileID: 7372721669070647553}
   m_Father: {fileID: 4818675045162974526}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &321109201279195782
 SphereCollider:
@@ -1341,7 +1205,7 @@ Transform:
   m_Children:
   - {fileID: 8050596355058285899}
   m_Father: {fileID: 4818675045162974526}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2853574659751414314
 SphereCollider:
@@ -1402,7 +1266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360363205353625163, guid: 81176657de256874cbafed059c1b4b8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.89
+      value: 6.98
       objectReference: {fileID: 0}
     - target: {fileID: 4360363205353625163, guid: 81176657de256874cbafed059c1b4b8d, type: 3}
       propertyPath: m_LocalRotation.w
