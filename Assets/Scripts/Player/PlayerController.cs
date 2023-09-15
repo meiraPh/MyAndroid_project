@@ -12,6 +12,8 @@ public class PlayerController : Singleton<PlayerController>
     public Transform target;
 
     public float lerpSpeed = 1f;
+    
+    public Ease ease = Ease.OutBack;
 
     [Header("Player")]
 
@@ -40,7 +42,7 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _pos;
     private float _currentSpeed;
     private Vector3 _startPos;
-    private float _baseSpeedToAnimation;
+    private float _baseSpeedToAnimation = 12;
 
     private void Start()
     {
@@ -54,7 +56,6 @@ public class PlayerController : Singleton<PlayerController>
             _bounceHelper.Bounce();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!_canRun) return;
@@ -102,6 +103,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         _canRun = true;
         animatorManager.Play(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
+        transform.DOScale(1, .3f).SetEase(ease);
     }
 
     #region Power UP's
