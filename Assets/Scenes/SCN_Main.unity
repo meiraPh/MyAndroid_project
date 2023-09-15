@@ -616,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 64336385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.00047922134, y: -6.93, z: -1863.0592}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1825930572}
@@ -655,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 768232865}
   lerpSpeed: 9
+  ease: 27
   speed: 12
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
