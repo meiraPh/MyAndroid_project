@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ItemCollactableCoin : ItemCollactableBase
 {
     new public Collider collider;
+    public Ease ease = Ease.OutBack;
     public bool collect = false;
     public float lerp = 5f;
     public float minDistance = 1f;
