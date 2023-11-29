@@ -17,7 +17,12 @@ public class ItemCollactableBase : MonoBehaviour
 
     private void Awake()
     {
+        if(GetComponent<ParticleSystem>() != null)
+        {
+            GetComponent<ParticleSystem>().transform.SetParent(null);
+        }
         colliders = GetComponents<Collider2D>();
+
     }
     
     private void OnTriggerEnter(Collider collision)
@@ -54,10 +59,10 @@ public class ItemCollactableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        if(myparticleSystem != null)
+        if(GetComponent<ParticleSystem>() != null)
         {
-            myparticleSystem.transform.SetParent(null);
-            myparticleSystem.Play();
+            GetComponent<ParticleSystem>().transform.SetParent(null);
+            GetComponent<ParticleSystem>().Play();
         }
 
         if (audioSource != null) audioSource.Play();
