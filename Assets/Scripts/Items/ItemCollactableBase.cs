@@ -61,10 +61,12 @@ public class ItemCollactableBase : MonoBehaviour
     {
         if(GetComponent<ParticleSystem>() != null)
         {
-            GetComponent<ParticleSystem>().transform.SetParent(null);
             GetComponent<ParticleSystem>().Play();
         }
 
-        if (audioSource != null) audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }
