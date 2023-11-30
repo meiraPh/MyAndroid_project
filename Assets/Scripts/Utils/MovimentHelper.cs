@@ -20,6 +20,7 @@ public class MovimentHelper : MonoBehaviour
     private void NextIndex()
     {
         _index++;
+        //ai vem testando ele ó ele
         if(_index >= positions.Count) _index = 0;
     }
     
