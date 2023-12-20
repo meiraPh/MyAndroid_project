@@ -519,10 +519,10 @@ GameObject:
   - component: {fileID: 64336390}
   - component: {fileID: 64336389}
   - component: {fileID: 64336388}
-  - component: {fileID: 64336387}
-  - component: {fileID: 64336393}
   - component: {fileID: 64336392}
+  - component: {fileID: 64336393}
   - component: {fileID: 64336394}
+  - component: {fileID: 64336395}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -530,20 +530,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &64336387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64336385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c8bb87396ba7134a9410b07826508ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pastPosition: {x: 0, y: 0}
-  velocity: 1
 --- !u!65 &64336388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -666,7 +652,9 @@ MonoBehaviour:
   invencible: 0
   coinCollector: {fileID: 24529789}
   animatorManager: {fileID: 1239735096}
-  vfxDeath: {fileID: 0}
+  vfxDeath: {fileID: 1360995830}
+  limit: 4
+  limitVector: {x: -3, y: 3}
   _bounceHelper: {fileID: 64336394}
 --- !u!114 &64336394
 MonoBehaviour:
@@ -683,6 +671,20 @@ MonoBehaviour:
   scaleDuration: 0.2
   scaleBounce: 1.2
   ease: 27
+--- !u!114 &64336395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64336385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8bb87396ba7134a9410b07826508ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pastPosition: {x: 0, y: 0}
+  velocity: 1
 --- !u!1 &83265162
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,12 +965,32 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 372962180}
+    - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2971815012406418503, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
       propertyPath: m_Name
@@ -1117,6 +1139,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274971577}
   m_CullTransparentMesh: 1
+--- !u!4 &372962180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6738788135099490589, guid: 4e3d3184cfc057c4eaa1af5f61a90e97, type: 3}
+  m_PrefabInstance: {fileID: 9177253702485293000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494330723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768232860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c8bb87396ba7134a9410b07826508ae, type: 3}
   m_Name: 
@@ -1983,6 +2010,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330604102}
   m_CullTransparentMesh: 1
+--- !u!198 &1360995830 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1204167501661217731, guid: d7c3fae10fbc0ec4a910c2d5d909cc53, type: 3}
+  m_PrefabInstance: {fileID: 155790078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513783271
 GameObject:
   m_ObjectHideFlags: 0
