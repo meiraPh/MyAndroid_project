@@ -522,7 +522,6 @@ GameObject:
   - component: {fileID: 64336392}
   - component: {fileID: 64336393}
   - component: {fileID: 64336394}
-  - component: {fileID: 64336395}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -671,20 +670,6 @@ MonoBehaviour:
   scaleDuration: 0.2
   scaleBounce: 1.2
   ease: 27
---- !u!114 &64336395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64336385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c8bb87396ba7134a9410b07826508ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pastPosition: {x: 0, y: 0}
-  velocity: 1
 --- !u!1 &83265162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,13 +1445,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768232860}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c8bb87396ba7134a9410b07826508ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pastPosition: {x: 0, y: 0}
   velocity: 1
+  limit: 4
 --- !u!65 &768232862
 BoxCollider:
   m_ObjectHideFlags: 0

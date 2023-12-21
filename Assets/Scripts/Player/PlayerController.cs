@@ -70,7 +70,7 @@ public class PlayerController : Singleton<PlayerController>
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
 
-        if(_pos.x < -limit)
+        /*if(_pos.x < -limit)
         {
             Debug.Log(string.Format("posição x: {0} limite: {1}", _pos.x, -limit));
             _pos.x = -limit;
@@ -80,7 +80,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             Debug.Log("Outro verifica");
             _pos.x = limit;
-        }
+        }*/
 
         transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
