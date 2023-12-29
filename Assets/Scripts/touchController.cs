@@ -7,14 +7,15 @@ public class touchController : MonoBehaviour
     
     public Vector2 pastPosition;
     public float velocity = 1f;
+    
     public float limit = 4f;
+    public Vector2 limitVector = new Vector2(-4, 4);
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("ASASASASA");
             Move(Input.mousePosition.x - pastPosition.x);
         }   
         pastPosition = Input.mousePosition;
@@ -33,8 +34,9 @@ public class touchController : MonoBehaviour
         {
             finalPosition.x = limit;
         }
+
+        transform.localPosition = finalPosition;
         
     }
-
 
 }
